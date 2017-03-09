@@ -1,0 +1,52 @@
+reset; # cancella dati memorizzati
+
+model problema.mod; # carica il modello
+data problema_tre.dat; # carica i dati
+
+option solver cplex; # scelta del motore di ottimizzazione
+solve; # risolve il modello
+
+printf "il profitto ricavato e'";
+display profitto_compact;
+printf "\n";
+
+printf "i seguenti oggetti venogono inseriti nello zaino";
+printf "\n";
+
+print S[first(D)];
+print S[member(2,D)];
+print S[last(D)];
+
+for {i in J} {
+   if( t[i]>0) then {
+   	printf "oggetto "; 
+   	print i;
+    printf "inserito nelle coordinate ";
+   	printf "\n";
+   	printf "x= "; 
+   	print X[i, first(D)];
+   	printf "y= "; 
+   	print X[i, member(2,D)];
+   	printf "z= "; 
+   	print X[i, last(D)];
+   	printf "\n";
+   	printf "inserito nella rotazione ";
+   	for{r in R}{
+   		if(p[i,r]>0) then{
+   			print r;
+   			printf "l'oggetto e'quindi";
+   			printf "\n";
+   			printf "largo: ";
+   			print s[i,first(D),r];
+   			printf "alto: ";
+   			print s[i,member(2,D),r];
+   			printf "profondo:";
+   			print s[i,last(D),r];
+   		}
+   	}
+   }
+   printf "\n";
+   
+}
+
+

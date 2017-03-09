@@ -1,0 +1,63 @@
+#insiemi
+set J := 1 2 3 4 5 6;
+set D := x y z;
+set R= uno due tre quattro cinque sei;
+
+#parametri
+param s :=
+[1, *, *]: uno due tre quattro cinque sei:=
+	x	 113 113 165 165 75 75
+	y 165 75  75 113 113 165
+	z 75 165 113 75 165 113	
+[2, *, *]: uno due tre quattro cinque sei:=
+	x	  426 426 498 498 243 243
+	y 	  498 243 426 243 498 426
+	z     243 498 243 426 426 498
+
+[3, *, *]: uno due tre quattro cinque sei:=
+	x	470 470 594 594 60 60 
+	y  594 60 470 60 594 470
+	z  60  594 60 470 470 594
+
+[4, *, *]: uno due tre quattro cinque sei:=
+	x 323 323 215 215 235 235
+	y 215 235 235 323 323 215
+	z 235 215 323 235 215 323 
+	
+[5, *, *]: uno due tre quattro cinque sei:=
+	x	302 302 198 198 163 163 
+	y  198 163 302 163 198 302
+	z 163 198 163 302  302 198 
+	
+
+[6, *, *]: uno due tre quattro cinque sei:=
+	x	 349 349 345 345 360 360
+	y   345 360 349 360 345 349
+	z   360 345 360 349 349 345
+
+;
+
+param po :=
+1 24 
+2 5
+3 8
+4 9
+5 20 
+6 22
+;
+param pu :=
+1 1
+2 1
+3 1
+4 1 
+5 1 
+6 1 
+;
+
+param S :=
+x	486
+y	986
+z	422
+;
+
+param BigM:= 10000000000;
